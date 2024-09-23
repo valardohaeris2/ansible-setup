@@ -22,5 +22,5 @@ variable "key_name" {
 variable "vpc_security_group_ids" {
     description = "AWS securoty group id to attach to EC2 instance"
     type = list
-}
+} 
 
