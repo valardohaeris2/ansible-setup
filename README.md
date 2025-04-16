@@ -36,3 +36,12 @@ Deploy ansible controller and host nodes on AWS EC2
     - ssh into the VMs
         ○ ssh -i ~/.ssh/vmware user-name@0.0.0.0
         ○ ssh -i ~/.ssh/ansible user-name@0.0.0.0
+
+## Create inventory file & Check connectivity
+
+- ansible all --key-file ~/.ssh/ansible -u user-name -i inventory -m ping
+
+## Create ansible.cfg
+
+-
+- ansible all -m ping
