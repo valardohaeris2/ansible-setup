@@ -1,10 +1,10 @@
 #!/bin/bash
 yum install -y ansible
-yum install -y python3-pip
+yum install -y python3-pip 
 
 # Ansible admin user 
 useradd ansibleadmin
-echo "changeme" | passwd --stdin ansibleadmin
+echo "changeme" | passwd --stdin ansibleadmin 
 
 # Ansible user 
 useradd ansibleuser

@@ -1,0 +1,28 @@
+---
+
+- hosts: all 
+  become: true 
+  tasks: 
+
+  - name: install yum-utils  
+    yum: 
+      name: yum-utils
+    when: ansible_distribution == "CentOS" 
+  - name: install Python 
+    package: 
+      name: python3
+  - name: install pip
+    package: 
+      name: python3-pip
+  - name: install hvac
+    pip: 
+      name: hvac
+      executable: pip3
+  - name: create Vault user group
+    group:
+      name: "{{ vault_group }}"
+    become: true 
+  - name: create Vault user
+    user: 
+      name: "{{ vault_user }}"
+     
